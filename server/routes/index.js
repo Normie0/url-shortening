@@ -6,21 +6,14 @@ const urlController = require('../controllers/url');
 router.post('/', urlController.createShortUrl);
 
 // Get all URLs
-router.get('/links', urlController.getAllUrls);  // Directly use getAllUrls
+router.get('/links', urlController.getAllUrls);  
 
-// Find and redirect to original URL using shortUrl
-
-// Delete a single URL
 router.delete('/', urlController.deleteUrl);
 
 router.get('/analytics', urlController.analytics);
 // Delete all URLs
-router.delete('/all', urlController.deleteAllUrls);  // Route for deleting all URLs
+router.delete('/all', urlController.deleteAllUrls);  
 
-// Route to fetch analytics (total clicks across all URLs)
-
-// Route to fetch top clicked URLs
-router.get('/analytics/top', urlController.getTopClickedUrls);
 
 router.get('/:shortUrl', urlController.redirectToOriginalUrl);
 
